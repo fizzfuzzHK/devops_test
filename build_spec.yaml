@@ -8,7 +8,7 @@ env:
     - BUILDRUN_HASH     
     
 steps:
- - type: Command
+  - type: Command
     name: "Export variables"
     timeoutInSeconds: 40
     command: |
