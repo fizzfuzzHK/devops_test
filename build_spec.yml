@@ -3,7 +3,10 @@ component: build
 timeoutInSeconds: 10000             
 runAs: root                         
 shell: bash                        
-
+env:  
+  exportedVariables:
+    - BUILDRUN_HASH     
+    
 steps:
   - type: Command
     name: "Docker Build"
