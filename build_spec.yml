@@ -1,0 +1,22 @@
+version: 0.1
+component: build                    
+timeoutInSeconds: 10000             
+runAs: root                         
+shell: bash                        
+
+steps:
+  - type: Command
+    name: "Docker Build"
+    command: |
+      docker build -t go-test .
+    onFailure:
+      - type: Command
+        command: |
+          echo "Failured docker build"
+        timeoutInSeconds: 60
+        runAs: root
+
+outputArtifacts:
+  - name: go-test
+    type: DOCKER_IMAGE
+    location: go-test:latest
