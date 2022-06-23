@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: devops-go
-        image: iad.ocir.io/ociobent/devops-handson:${BUILDRUN_HASH}
+        image: nrt.ocir.io/ociobent/devops/go-hello:${BUILDRUN_HASH}
         ports:
         - containerPort: 8080
 ---
