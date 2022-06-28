@@ -17,6 +17,8 @@ spec:
         image: nrt.ocir.io/ociobent/devops/go-hello:${BUILDRUN_HASH}
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+      - name: ocir
 ---
 apiVersion: v1
 kind: Service
